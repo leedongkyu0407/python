@@ -1,3 +1,4 @@
+import time
 def solution(n, k):
     count = 0
 
@@ -8,8 +9,13 @@ def solution(n, k):
             n -= 1
         
         count += 1 #매 연산시 숫자 세기
-        
+
     return count
+
+start_time = time.time()
 
 n, k = map(int, input().split())
 print(solution(n, k))
+
+end_time = time.time()
+print("time : ", end_time - start_time)
