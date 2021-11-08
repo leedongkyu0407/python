@@ -4,7 +4,8 @@ def solution(s):
     for i in range(1, len(s)):
         num = int(s[i])
 
-        if num <= 1 or result <= 1: #더하거나 곱해야 하는 두 수중 어느 하나라도 0이거나 1이면 더하기 실행
+        #더하거나 곱해야 하는 두 수중 어느 하나라도 0이거나 1이면 더하기 실행
+        if num <= 1 or result <= 1: 
             result += num
         else:
             result *= num
