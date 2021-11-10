@@ -8,6 +8,7 @@ def solution(n, k, data):
             break
         #큰 것부터 확인하며 잔돈 계산
         if data[i] <= k:
+            #몫은 코인 개수 
             result += (k // data[i])
             k %= data[i]
 
