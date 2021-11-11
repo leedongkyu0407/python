@@ -1,3 +1,21 @@
+def opt_solution(a):
+    ls = []
+    result  = 0
+
+    #'-' 기준으로 정렬하였으므로 a[0]는 모두 더하면 된다.
+    for i in a[0].split('+'):
+        result += int(i)
+
+    for i in a[1:]:
+        for j in i.split('+'):
+            result -= int(j)
+
+    return result
+
+a = input().split('-') #- 기준으로 문자열 분리
+print(opt_solution(a))
+'''
+input()으로 그냥 받아왔을 경우 사용
 def prepare(a):
     ls = []
     temp = ''
@@ -34,23 +52,7 @@ def solution(ls):
 
     return result
 
-def opt_solution(a):
-    ls = []
-    result  = 0
-
-    for i in a[0].split('+'):
-        result += int(i)
-
-    for i in a[1:]:
-        for j in i.split('+'):
-            result -= int(j)
-
-    return result
-
-a = input().split('-') #- 기준으로 문자열 분리
-print(opt_solution(a))
-'''
-input()으로 그냥 받아왔을 경우 사용
-    ls = prepare(a)
-    print(solution(ls))
+a = input()
+ls = prepare(a)
+print(solution(ls))
 '''
