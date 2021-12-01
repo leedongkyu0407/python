@@ -19,26 +19,20 @@ def setting(n): #초기 세팅
 
     return ls_PN, ls_NN, result
 
-def solution(ls_PN, ls_NN, result):
-    if (len(ls_PN) % 2) == 0:
-        for j in range(0, len(ls_PN), 2):
-            result += (ls_PN[j] * ls_PN[j+1])
-    else:
-        for j in range(0, len(ls_PN)-1, 2):
-            result += (ls_PN[j] * ls_PN[j+1])
-        result += ls_PN[-1]
 
-    if (len(ls_NN) % 2) == 0:
-        for k in range(0, len(ls_NN), 2):
-            result += (ls_NN[k] * ls_NN[k+1])
+def solution(ls_N, result):
+    if (len(ls_N) % 2) == 0:
+        for j in range(0, len(ls_N), 2):
+            result += (ls_N[j] * ls_N[j+1])
     else:
-        for k in range(0, len(ls_NN)-1, 2):
-            result += (ls_NN[k] * ls_NN[k+1])
-        result += ls_NN[-1]
+        for j in range(0, len(ls_N)-1, 2):
+            result += (ls_N[j] * ls_N[j+1])
+        result += ls_N[-1]#원소 개수가 홀수일 경우 마지막 원소 더하기
 
     return result
 
 n = int(sys.stdin.readline())
 
 ls_PN, ls_NN, result = setting(n)
-print(solution(ls_PN, ls_NN, result))
+result = solution(ls_PN, result)
+print(solution(ls_NN, result))
