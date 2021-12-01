@@ -9,12 +9,14 @@ def solution(num_ls):
     if num_ls[-1] != 0:
         return -1    
     
+    #10으로 나눈 나머지들이 3의 배수이려면 각 자릿수의 합이 3의 배수여야 한다.
     for i in num_ls:
         result += i
     
     if result%3 != 0:
         return -1
     
+    #가장 큰 수를 구하는 것이므로 큰 수부터 앞자리를 채운다.
     for i in num_ls:
         answer += str(i)
 
