@@ -1,11 +1,11 @@
 import sys
 def solution(input_s):
     length = len(input_s)
-
+    
     result = []
     count = 1
 
-    comparison = 1001
+    comparison = length
     check_len = 0
 
     #문자열의 크기를 1부터 전체 길이의 절반까지 순차대로 늘리면서 압축실행
