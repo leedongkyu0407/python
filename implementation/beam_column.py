@@ -1,4 +1,3 @@
-#벽면 사이즈
 def solution(n, build_frame):
     answer = []
     
@@ -19,6 +18,7 @@ def solution(n, build_frame):
     
     return sorted(answer)
 
+#구조물 설치 함수
 def check_install(bf, answer):
     x, y, kind = bf[0], bf[1], bf[2]
     #설치하는 게 기둥일 경우
@@ -37,6 +37,7 @@ def check_install(bf, answer):
         else:
             return False
 
+#구조물 삭제 뒤 남은 구조물이 규칙을 만족하는지 확인하는 함수
 def check_delete(bf, answer):
     for x, y, kind in answer:
         #설치된 게 기둥일 경우
