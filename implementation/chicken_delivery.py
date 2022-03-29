@@ -21,8 +21,8 @@ def solution(n, m, city):
     #combination을 사용해서 모든 치킨집 중에서 m개의 치킨집을 뽑는 조합 계산하여 리스트로 생성
     possible_store = list(combinations(chicken_matrix, m))
     
-    #비교를 위한 초기값 세팅
-    answer = 10000000000
+    #비교를 위한 초기값 세팅(1000000000)
+    answer = 1e9
     
     #가능한 모든 조합에 대해서 치킨 거리 확인
     for ps in possible_store:
@@ -41,7 +41,8 @@ def check_ds(house_matrix, city, ps):
                 tp_city[i][j] = 0
     
     sum = 0
-    result = 10000000000
+    #1000000000
+    result = 1e9
     
     #각 집의 치킨 거리 계산하여 도시의 치킨 거리 산출
     for h in house_matrix:
@@ -50,8 +51,8 @@ def check_ds(house_matrix, city, ps):
             result = min(temp, result)
         
         sum += result
-        result = 10000000000
-    
+        result = 1e9
+        
     return sum
 
 print(solution(n, m, city))
